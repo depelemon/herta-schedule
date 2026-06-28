@@ -1,0 +1,54 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background:
+    radial-gradient(1200px 600px at 80% -10%, rgba(169, 130, 219, 0.18), transparent 60%),
+    radial-gradient(900px 500px at 0% 110%, rgba(145, 104, 201, 0.14), transparent 55%),
+    #140f1f;
+  color: #efe9fb;
+  font-family: 'Inter', 'Segoe UI', system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+@layer components {
+  .glass {
+    @apply rounded-2xl border border-white/10 bg-white/[0.04] backdrop-blur-sm;
+  }
+  .btn {
+    @apply inline-flex items-center gap-2 rounded-xl px-3.5 py-2 text-sm font-medium
+           transition-colors duration-150 disabled:opacity-40 disabled:cursor-not-allowed;
+  }
+  .btn-primary {
+    @apply btn bg-lilac-500 text-plum-950 hover:bg-lilac-400 shadow-glow;
+  }
+  .btn-ghost {
+    @apply btn text-lavender-200 hover:bg-white/5 border border-white/10;
+  }
+  .input {
+    @apply w-full rounded-xl border border-white/10 bg-plum-900/60 px-3 py-2 text-sm
+           text-lavender-100 placeholder:text-lavender-300/40
+           focus:border-lilac-500 focus:outline-none focus:ring-1 focus:ring-lilac-500;
+  }
+  .label {
+    @apply mb-1 block text-xs font-medium uppercase tracking-wide text-lavender-300/70;
+  }
+}
+
+/* Thin elegant scrollbars */
+::-webkit-scrollbar { width: 10px; height: 10px; }
+::-webkit-scrollbar-thumb {
+  background: rgba(169, 130, 219, 0.3);
+  border-radius: 999px;
+  border: 2px solid transparent;
+  background-clip: content-box;
+}
+::-webkit-scrollbar-thumb:hover { background: rgba(169, 130, 219, 0.5); background-clip: content-box; }
