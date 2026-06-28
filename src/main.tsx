@@ -5,6 +5,7 @@ import App from './App.tsx'
 import TodayPage from './pages/TodayPage.tsx'
 import SchedulePage from './pages/SchedulePage.tsx'
 import CoursePage from './pages/CoursePage.tsx'
+import SettingsPage from './pages/SettingsPage.tsx'
 import './index.css'
 
 const router = createHashRouter([
@@ -16,6 +17,7 @@ const router = createHashRouter([
       { path: 'today', element: <TodayPage /> },
       { path: 'schedule', element: <SchedulePage /> },
       { path: 'courses', element: <CoursePage /> },
+      { path: 'settings', element: <SettingsPage /> },
     ],
   },
 ])

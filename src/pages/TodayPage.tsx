@@ -5,16 +5,15 @@ import { useStore } from '../store/useStore'
 import { DAY_LABELS_LONG, todayDow, toMinutes, isoToday } from '../lib/time'
 import { TodoRow } from './CoursePage'
 import type { Course, ScheduleBlock, Todo } from '../types'
+import { useSettings, DEFAULT_BANNER } from '../store/useSettings'
 
 const GREETINGS = [
-  'Time to be a genius today. Kuru kuru~',
-  'Another day, another step toward brilliance.',
-  "Let's get this done efficiently.",
-  'The Genius Society waits for no one.',
+  'Madam Herta is a peerless gem. Madam Herta is an unrivaled genius. Madam Herta is an inimitable beauty.',
 ]
 
 export default function TodayPage() {
   const { courses, blocks, todos, addTodo, toggleTodo, deleteTodo } = useStore()
+  const bannerSrc = useSettings((s) => s.bannerSrc)
   const dow = todayDow()
   const todayIso = isoToday()
   const greeting = useMemo(() => GREETINGS[new Date().getDate() % GREETINGS.length], [])
@@ -61,18 +60,39 @@ export default function TodayPage() {
   const openCount = todosToday.filter((t) => !t.done).length
 
   return (
-    <div className="mx-auto max-w-3xl">
-      <header className="mb-7">
-        <p className="flex items-center gap-2 text-sm font-medium text-lilac-400">
-          <Sparkles size={15} /> {greeting}
-        </p>
-        <h1 className="mt-1 text-3xl font-bold">{DAY_LABELS_LONG[dow]}</h1>
-        <p className="text-sm text-lavender-300/60">
-          {format(new Date(), 'MMMM d, yyyy')} ·{' '}
-          {todayBlocks.length} {todayBlocks.length === 1 ? 'class' : 'classes'} · {openCount} to-do
-          {openCount === 1 ? '' : 's'} left
-        </p>
-      </header>
+    <div className="w-full">
+      {/* Banner */}
+      <div className="relative mb-6 overflow-hidden rounded-2xl border border-white/10" style={{ height: 200 }}>
+        <img
+          src={bannerSrc ?? DEFAULT_BANNER}
+          alt="Herta banner"
+          className="h-full w-full object-cover"
+          draggable={false}
+        />
+        {/* Gradient overlay — strong enough to read text clearly */}
+        <div
+          className="absolute inset-0 flex flex-col justify-end p-6"
+          style={{
+            background:
+              'linear-gradient(to top, rgba(20,15,31,0.97) 0%, rgba(20,15,31,0.75) 40%, rgba(20,15,31,0.2) 100%)',
+          }}
+        >
+          <p className="flex items-center gap-1.5 text-xs font-semibold tracking-wide text-lilac-400 drop-shadow">
+            <Sparkles size={12} /> {greeting}
+          </p>
+          <h1
+            className="mt-1 text-4xl font-bold text-lavender-100"
+            style={{ textShadow: '0 2px 12px rgba(20,15,31,0.9)' }}
+          >
+            {DAY_LABELS_LONG[dow]}
+          </h1>
+          <p className="mt-0.5 text-sm font-medium text-lavender-200/90" style={{ textShadow: '0 1px 6px rgba(20,15,31,0.8)' }}>
+            {format(new Date(), 'MMMM d, yyyy')} ·{' '}
+            {todayBlocks.length} {todayBlocks.length === 1 ? 'class' : 'classes'} · {openCount} to-do
+            {openCount === 1 ? '' : 's'} left
+          </p>
+        </div>
+      </div>
 
       {todayCourseIds.length === 0 ? (
         <div className="glass flex flex-col items-center gap-2 py-20 text-center text-lavender-300/50">

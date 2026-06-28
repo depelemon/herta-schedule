@@ -42,14 +42,20 @@ export const emptyData = (): AppData => ({
   todos: [],
 })
 
-// Palette offered when creating a course
+export const OTHER_COURSE_ID = '__other__'
+
+// Palette offered when creating a course (purple, blue, teal, pink, gold, rose, green, indigo, lavender, coral)
 export const COURSE_COLORS = [
-  '#a982db',
-  '#c3a6e8',
-  '#8db6f0',
-  '#7fd1c4',
-  '#e0a3d6',
-  '#f0b67f',
-  '#e88f8f',
-  '#9fd485',
+  '#a982db', // lilac
+  '#c3a6e8', // pale lilac
+  '#9080e0', // indigo
+  '#8db6f0', // sky blue
+  '#4dd4be', // teal
+  '#7fd4a8', // mint
+  '#f0c868', // gold
+  '#f5a870', // peach
+  '#e87898', // rose
+  '#e0a3d6', // pink
+  '#9fd485', // sage green
+  '#f0a8c0', // blush
 ]

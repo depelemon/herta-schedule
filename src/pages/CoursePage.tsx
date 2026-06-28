@@ -5,6 +5,7 @@ import { useStore } from '../store/useStore'
 import { COURSE_COLORS, type Course, type Todo } from '../types'
 import { isoToday } from '../lib/time'
 import Modal from '../components/Modal'
+import DatePicker from '../components/DatePicker'
 
 export default function CoursePage() {
   const { courses, todos, addCourse, updateCourse, deleteCourse, addTodo, toggleTodo, deleteTodo } =
@@ -175,12 +176,9 @@ function CourseTodos({
           onChange={(e) => setTitle(e.target.value)}
           onKeyDown={(e) => e.key === 'Enter' && submit()}
         />
-        <input
-          type="date"
-          className="input w-40"
-          value={date}
-          onChange={(e) => setDate(e.target.value)}
-        />
+        <div className="w-52 shrink-0">
+          <DatePicker value={date} onChange={setDate} />
+        </div>
         <button className="btn-primary" onClick={submit}>
           <Plus size={16} />
         </button>
@@ -242,20 +240,17 @@ export function TodoRow({
         onClick={() => onDelete(todo.id)}
         className="opacity-0 transition-opacity group-hover:opacity-100"
       >
-        <Trash2 size={14} className="text-lavender-300/40 hover:text-red-300" />
+        <Trash2 size={14} className="text-lavender-300/40 hover:text-rose-300" />
       </button>
     </div>
   )
 }
 
-function EmptyState({ onAdd }: { onAdd: () => void }) {
+function EmptyState(_: { onAdd: () => void }) {
   return (
     <div className="glass flex flex-col items-center justify-center gap-3 py-20 text-center">
       <BookOpen size={36} className="text-lilac-400/60" />
-      <p className="text-lavender-300/60">No courses yet.</p>
-      <button className="btn-primary" onClick={onAdd}>
-        <Plus size={16} /> Add your first course
-      </button>
+      <p className="text-lavender-300/60">No courses yet. Use the button above to add one.</p>
     </div>
   )
 }

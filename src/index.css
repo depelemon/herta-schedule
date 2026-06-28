@@ -51,4 +51,10 @@ body {
   border: 2px solid transparent;
   background-clip: content-box;
 }
-::-webkit-scrollbar-thumb:hover { background: rgba(169, 130, 219, 0.5); background-clip: content-box; }
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(169, 130, 219, 0.5);
+  background-clip: content-box;
+}
+
+/* Dragging state */
+.dragging { cursor: grabbing !important; user-select: none; }
