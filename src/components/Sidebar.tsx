@@ -16,7 +16,7 @@ export default function Sidebar() {
   const sidebarSrc = useSettings((s) => s.sidebarSrc)
 
   return (
-    <aside className="flex w-60 flex-shrink-0 flex-col border-r border-white/8 bg-plum-900/50">
+    <aside className="flex w-60 flex-shrink-0 flex-col bg-plum-900/50">
       {/* Brand */}
       <div className="flex-shrink-0 px-5 pt-6 pb-3">
         <h1 className="text-xl font-bold tracking-tight">
