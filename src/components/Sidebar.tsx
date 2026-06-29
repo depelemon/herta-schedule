@@ -42,15 +42,15 @@ export default function Sidebar() {
             key={to}
             to={to}
             className={({ isActive }) =>
-              `flex items-center gap-3 rounded-xl px-3 py-2.5 text-sm font-medium transition-all ${
+              `flex items-center justify-center gap-2.5 rounded-xl px-3 py-2.5 text-sm font-medium transition-all ${
                 isActive
                   ? 'bg-lilac-500/15 text-lavender-100 shadow-glow border border-lilac-500/20'
                   : 'text-lavender-300/60 hover:bg-white/5 hover:text-lavender-100'
               }`
             }
           >
-            <Icon size={17} />
-            {label}
+            <Icon size={17} className="shrink-0" />
+            <span className="w-[72px]">{label}</span>
           </NavLink>
         ))}
       </nav>

@@ -7,9 +7,9 @@ export const DEFAULT_BG = '/hertabg.jpeg'
 export const DEFAULT_SIDEBAR = '/hertaside.gif'
 
 export interface AppSettings {
-  bannerSrc: string | null   // null = use DEFAULT_BANNER
-  bgSrc: string | null       // null = use DEFAULT_BG
-  sidebarSrc: string | null  // null = use DEFAULT_SIDEBAR
+  bannerSrc: string | null
+  bgSrc: string | null
+  sidebarSrc: string | null
 }
 
 interface SettingsStore extends AppSettings {

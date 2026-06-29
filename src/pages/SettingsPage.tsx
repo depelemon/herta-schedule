@@ -18,7 +18,7 @@ export default function SettingsPage() {
   const { bannerSrc, bgSrc, sidebarSrc, setBannerSrc, setBgSrc, setSidebarSrc } = useSettings()
 
   return (
-    <div className="mx-auto max-w-2xl">
+    <div className="mx-auto max-w-2xl space-y-5">
       <header className="mb-6">
         <h1 className="text-2xl font-bold">Settings</h1>
         <p className="mt-0.5 text-sm text-lavender-300/60">Customize your HertaSchedule.</p>

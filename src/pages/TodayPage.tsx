@@ -161,12 +161,12 @@ function CourseCard({
           style={{ backgroundColor: course.color, boxShadow: `0 0 10px ${course.color}` }}
         />
         <h2 className="text-base font-semibold">{course.name}</h2>
-        <div className="ml-auto flex items-center gap-3 text-xs text-lavender-300/60">
+        <div className="ml-auto flex items-center gap-3">
           {blocks.map((b) => (
             <span key={b.id} className="flex items-center gap-1.5">
-              {b.start}–{b.end}
+              <span className="text-sm font-bold text-white">{b.start}–{b.end}</span>
               {b.location && (
-                <span className="flex items-center gap-0.5 text-lavender-300/40">
+                <span className="flex items-center gap-0.5 text-xs text-lavender-300/40">
                   <MapPin size={10} /> {b.location}
                 </span>
               )}

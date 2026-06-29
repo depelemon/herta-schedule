@@ -7,7 +7,7 @@ import Modal from '../components/Modal'
 import CourseSelect from '../components/CourseSelect'
 
 // ── Grid constants ─────────────────────────────────────────────────────────────
-const START_HOUR = 6
+const START_HOUR = 8
 const END_HOUR = 23
 const PX_PER_HOUR = 64
 const SNAP_MIN = 15
