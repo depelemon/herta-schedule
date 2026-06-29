@@ -21,18 +21,18 @@ export default function SettingsPage() {
     <div className="mx-auto max-w-2xl">
       <header className="mb-6">
         <h1 className="text-2xl font-bold">Settings</h1>
-        <p className="text-sm text-lavender-300/60">Customize your HertaSchedule.</p>
+        <p className="mt-0.5 text-sm text-lavender-300/60">Customize your HertaSchedule.</p>
       </header>
 
-      <div className="glass p-5 space-y-6">
-        <h2 className="text-sm font-semibold uppercase tracking-wider text-lavender-300/60">Images</h2>
+      <div className="glass p-5 space-y-8">
+        <h2 className="text-xs font-semibold uppercase tracking-wider text-lavender-300/50">Images</h2>
 
         <ImageSetting
           label="Today page banner"
           description="Wide banner shown at the top of the Today page."
           src={bannerSrc ?? DEFAULT_BANNER}
           isCustom={bannerSrc !== null}
-          previewClass="h-24 w-full"
+          previewClass="w-full aspect-[5/1]"
           objectFit="object-cover"
           onUpload={setBannerSrc}
           onReset={() => setBannerSrc(null)}
@@ -43,7 +43,7 @@ export default function SettingsPage() {
           description="Faint image shown behind all three pages."
           src={bgSrc ?? DEFAULT_BG}
           isCustom={bgSrc !== null}
-          previewClass="h-36 w-full"
+          previewClass="w-full aspect-video"
           objectFit="object-cover"
           onUpload={setBgSrc}
           onReset={() => setBgSrc(null)}
@@ -54,7 +54,7 @@ export default function SettingsPage() {
           description="Image or GIF between the title and nav links."
           src={sidebarSrc ?? DEFAULT_SIDEBAR}
           isCustom={sidebarSrc !== null}
-          previewClass="h-48 w-40"
+          previewClass="w-36 aspect-[3/4]"
           objectFit="object-contain object-top"
           onUpload={setSidebarSrc}
           onReset={() => setSidebarSrc(null)}
@@ -84,32 +84,32 @@ function ImageSetting({
   onReset: () => void
 }) {
   return (
-    <div className="flex gap-5 border-t border-white/6 pt-5 first:border-0 first:pt-0">
+    <div className="border-t border-white/6 pt-6 first:border-0 first:pt-0 space-y-3">
       {/* Preview */}
-      <div
-        className={`${previewClass} shrink-0 overflow-hidden rounded-xl border border-white/10 bg-plum-900/60`}
-      >
+      <div className={`${previewClass} overflow-hidden rounded-xl bg-plum-900/60`}>
         <img src={src} className={`h-full w-full ${objectFit}`} alt={label} />
       </div>
 
       {/* Controls */}
-      <div className="flex flex-col justify-center gap-2">
-        <p className="text-sm font-semibold text-lavender-100">{label}</p>
-        <p className="text-xs text-lavender-300/50">{description}</p>
-        <p className="text-xs text-lavender-300/40">
-          {isCustom ? 'Custom image active.' : 'Using default image.'}
-        </p>
-        <div className="mt-1 flex flex-wrap gap-2">
-          <button className="btn-primary py-1.5 text-xs" onClick={() => pickImage(onUpload)}>
+      <div className="flex items-start justify-between gap-4">
+        <div className="min-w-0">
+          <p className="text-sm font-semibold text-lavender-100">{label}</p>
+          <p className="mt-0.5 text-xs text-lavender-300/50">{description}</p>
+          <p className="mt-0.5 text-xs text-lavender-300/40">
+            {isCustom ? 'Custom image active.' : 'Using default image.'}
+          </p>
+          <p className="mt-1 text-[11px] text-lavender-300/30">JPEG, PNG, GIF, WebP accepted.</p>
+        </div>
+        <div className="flex shrink-0 flex-col gap-2">
+          <button className="btn-primary py-1.5 text-xs whitespace-nowrap" onClick={() => pickImage(onUpload)}>
             Upload image
           </button>
           {isCustom && (
-            <button className="btn-ghost py-1.5 text-xs" onClick={onReset}>
+            <button className="btn-ghost py-1.5 text-xs whitespace-nowrap" onClick={onReset}>
               Reset to default
             </button>
           )}
         </div>
-        <p className="text-[11px] text-lavender-300/30">JPEG, PNG, GIF, WebP accepted.</p>
       </div>
     </div>
   )

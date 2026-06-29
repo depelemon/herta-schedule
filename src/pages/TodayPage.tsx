@@ -60,7 +60,7 @@ export default function TodayPage() {
   const openCount = todosToday.filter((t) => !t.done).length
 
   return (
-    <div className="w-full">
+    <div className="mx-auto max-w-3xl">
       {/* Banner */}
       <div className="relative mb-6 overflow-hidden rounded-2xl border border-white/10" style={{ height: 200 }}>
         <img

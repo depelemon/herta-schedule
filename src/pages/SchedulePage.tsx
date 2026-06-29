@@ -276,7 +276,7 @@ export default function SchedulePage() {
             </button>
           )}
           <button
-            className={editMode ? 'btn-primary' : 'btn-ghost'}
+            className="btn-primary"
             onClick={() => setEditMode((e) => !e)}
             title={editMode ? 'Done editing' : 'Enter edit mode'}
           >

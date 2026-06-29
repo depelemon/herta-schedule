@@ -25,13 +25,12 @@ export default function Sidebar() {
         <p className="mt-0.5 text-[11px] text-lavender-300/40 tracking-widest uppercase">kuru kuru~</p>
       </div>
 
-      {/* Character art — between title and nav, fixed small height */}
-      <div className="mx-3 mb-3 flex-shrink-0 overflow-hidden rounded-xl border border-white/8 bg-plum-900/60"
-           style={{ height: 160 }}>
+      {/* Character art — between title and nav */}
+      <div className="mx-3 mb-3 flex-shrink-0 overflow-hidden rounded-xl bg-plum-900/60">
         <img
           src={sidebarSrc ?? DEFAULT_SIDEBAR}
           alt="Herta"
-          className="h-full w-full object-contain object-top"
+          className="w-full max-h-48 object-contain object-top"
           draggable={false}
         />
       </div>

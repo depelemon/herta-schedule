@@ -73,6 +73,18 @@ export default function CoursePage() {
                 >
                   <Pencil size={14} className="text-lavender-300/60 hover:text-lavender-100" />
                 </span>
+                <span
+                  role="button"
+                  tabIndex={0}
+                  onClick={(e) => {
+                    e.stopPropagation()
+                    deleteCourse(c.id)
+                    if (selectedId === c.id) setSelectedId(null)
+                  }}
+                  className="opacity-0 transition-opacity group-hover:opacity-100"
+                >
+                  <Trash2 size={14} className="text-lavender-300/40 hover:text-rose-300" />
+                </span>
               </button>
             ))}
           </div>
