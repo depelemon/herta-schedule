@@ -36,6 +36,7 @@ interface State extends AppData {
   addBlockOnDays: (b: Omit<ScheduleBlock, 'id' | 'day'>, days: DayOfWeek[]) => void
   updateBlock: (id: string, patch: Partial<Omit<ScheduleBlock, 'id'>>) => void
   deleteBlock: (id: string) => void
+  setBlocks: (blocks: ScheduleBlock[]) => void
 
   // todo actions
   addTodo: (t: Omit<Todo, 'id' | 'done'>) => void
@@ -119,6 +120,8 @@ export const useStore = create<State>((set, get) => {
       })),
 
     deleteBlock: (id) => commit((s) => ({ blocks: s.blocks.filter((b) => b.id !== id) })),
+
+    setBlocks: (blocks) => commit(() => ({ blocks })),
 
     addTodo: (t) =>
       commit((s) => ({ todos: [...s.todos, { ...t, id: uid(), done: false }] })),

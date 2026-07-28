@@ -1,6 +1,7 @@
 import { useCallback, useMemo, useRef, useState } from 'react'
-import { Pencil, Lock, Plus, MapPin, Trash2 } from 'lucide-react'
+import { Pencil, Lock, Plus, MapPin, Trash2, Wand2 } from 'lucide-react'
 import { useStore } from '../store/useStore'
+import { generateSchedule } from '../lib/scheduleGen'
 import { type DayOfWeek, type ScheduleBlock, OTHER_COURSE_ID } from '../types'
 import { DAY_LABELS, toMinutes, fromMinutes } from '../lib/time'
 import Modal from '../components/Modal'
@@ -60,10 +61,11 @@ const OTHER_COLOR = '#6b7280'
 
 // ── Main component ─────────────────────────────────────────────────────────────
 export default function SchedulePage() {
-  const { courses, blocks, addBlock, addBlockOnDays, updateBlock, deleteBlock } = useStore()
+  const { courses, blocks, addBlock, addBlockOnDays, updateBlock, deleteBlock, setBlocks } = useStore()
   const [editMode, setEditMode] = useState(false)
   const [drag, setDrag] = useState<DragState | null>(null)
   const [modal, setModal] = useState<ModalState>(null)
+  const [showGenConfirm, setShowGenConfirm] = useState(false)
   const daysRef = useRef<HTMLDivElement>(null)
 
   const hours = useMemo(
@@ -270,6 +272,13 @@ export default function SchedulePage() {
           <p className="text-sm text-lavender-300/60">Your weekly recurring timetable.</p>
         </div>
         <div className="flex items-center gap-2">
+          <button
+            className="btn-ghost"
+            onClick={() => setShowGenConfirm(true)}
+            title="Auto-generate a weekly schedule from your courses"
+          >
+            <Wand2 size={16} /> Generate
+          </button>
           {editMode && (
             <button className="btn-primary" onClick={() => setModal({ mode: 'add' })}>
               <Plus size={16} /> Add block
@@ -460,6 +469,46 @@ export default function SchedulePage() {
               : undefined
           }
         />
+      )}
+
+      {showGenConfirm && (
+        <Modal
+          open
+          title="Generate schedule"
+          onClose={() => setShowGenConfirm(false)}
+          footer={
+            <>
+              <button className="btn-ghost" onClick={() => setShowGenConfirm(false)}>
+                Cancel
+              </button>
+              <button
+                className="btn-primary"
+                disabled={courses.length === 0}
+                onClick={() => {
+                  setBlocks(generateSchedule(courses))
+                  setShowGenConfirm(false)
+                }}
+              >
+                <Wand2 size={15} /> Generate
+              </button>
+            </>
+          }
+        >
+          <p className="text-sm text-lavender-300/70">
+            This will replace your current{' '}
+            <span className="text-lavender-100 font-medium">{blocks.length} block{blocks.length !== 1 ? 's' : ''}</span>{' '}
+            with a fresh schedule built from your{' '}
+            <span className="text-lavender-100 font-medium">{courses.length} course{courses.length !== 1 ? 's' : ''}</span>.
+          </p>
+          <div className="rounded-xl border border-white/10 bg-white/[0.04] px-4 py-3 text-xs text-lavender-300/60 space-y-1">
+            <p>• 9 sessions × 2 hours = <strong className="text-lavender-200">18 hours/week</strong></p>
+            <p>• Mon–Fri, no block starts before <strong className="text-lavender-200">10:00</strong></p>
+            <p>• Courses distributed evenly across the week</p>
+          </div>
+          {courses.length === 0 && (
+            <p className="text-sm text-rose-300/80">Add at least one course first.</p>
+          )}
+        </Modal>
       )}
     </div>
   )

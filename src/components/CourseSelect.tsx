@@ -70,7 +70,7 @@ export default function CourseSelect({ courses, value, onChange }: Props) {
       {/* Dropdown */}
       {open && (
         <div
-          className="absolute left-0 top-full z-50 mt-1.5 w-full overflow-hidden rounded-2xl border border-white/10 bg-plum-900 py-1 shadow-glow"
+          className="absolute left-0 top-full z-50 mt-1.5 w-full max-h-60 overflow-y-auto rounded-2xl border border-white/10 bg-plum-900 py-1 shadow-glow"
           style={{ boxShadow: '0 8px 32px -4px rgba(20, 15, 31, 0.9), 0 0 24px -6px rgba(169, 130, 219, 0.3)' }}
         >
           {options.map((opt) => {

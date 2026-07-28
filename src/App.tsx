@@ -9,6 +9,18 @@ export default function App() {
 
   useEffect(() => {
     void initFromFile()
+    // Remove any API keys stored by the (now-removed) music feature
+    localStorage.removeItem('hertaschedule:apikeys')
+    try {
+      const raw = localStorage.getItem('hertaschedule:settings')
+      if (raw) {
+        const s = JSON.parse(raw)
+        if ('youtubeApiKey' in s) {
+          delete s.youtubeApiKey
+          localStorage.setItem('hertaschedule:settings', JSON.stringify(s))
+        }
+      }
+    } catch {}
   }, [initFromFile])
 
   return (
