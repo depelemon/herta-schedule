@@ -1,0 +1,29 @@
+{
+  "version": 1,
+  "courses": [
+    { "id": "p2c1basd", "name": "Basdat B", "color": "#a982db" },
+    { "id": "p2c2pbpd", "name": "PBP D", "color": "#c3a6e8" },
+    { "id": "p2c3osb", "name": "OS B", "color": "#9080e0" },
+    { "id": "p2c4spa", "name": "StatProb A", "color": "#8db6f0" },
+    { "id": "p2c5sdae", "name": "SDA E", "color": "#4dd4be" }
+  ],
+  "blocks": [
+    { "id": "p2b1a", "courseId": "p2c1basd", "day": 1, "start": "15:00", "end": "16:40", "location": "2.2302" },
+    { "id": "p2b1b", "courseId": "p2c1basd", "day": 3, "start": "15:00", "end": "16:40", "location": "2.2302" },
+
+    { "id": "p2b2a", "courseId": "p2c2pbpd", "day": 0, "start": "13:00", "end": "14:40", "location": "A2.07 (Ged baru)" },
+    { "id": "p2b2b", "courseId": "p2c2pbpd", "day": 2, "start": "13:00", "end": "14:40", "location": "Lab A1.03 (Ged Baru)" },
+
+    { "id": "p2b3a", "courseId": "p2c3osb", "day": 0, "start": "10:00", "end": "11:40", "location": "A2.09 (Ged Baru)" },
+    { "id": "p2b3b", "courseId": "p2c3osb", "day": 2, "start": "10:00", "end": "11:40", "location": "A2.09 (Ged Baru)" },
+
+    { "id": "p2b4a", "courseId": "p2c4spa", "day": 0, "start": "15:00", "end": "16:40", "location": "A6.11 (Ged Baru)" },
+    { "id": "p2b4b", "courseId": "p2c4spa", "day": 2, "start": "09:00", "end": "09:50", "location": "A6.11 (Ged Baru)" },
+    { "id": "p2b4c", "courseId": "p2c4spa", "day": 3, "start": "08:00", "end": "09:40", "location": "Lab A1.03 (Ged Baru)" },
+
+    { "id": "p2b5a", "courseId": "p2c5sdae", "day": 1, "start": "13:00", "end": "14:40", "location": "A6.09 (Ged Baru)" },
+    { "id": "p2b5b", "courseId": "p2c5sdae", "day": 3, "start": "13:00", "end": "14:40", "location": "A6.09 (Ged Baru)" },
+    { "id": "p2b5c", "courseId": "p2c5sdae", "day": 4, "start": "13:00", "end": "15:10", "location": "A6.01 (Ged Baru)" }
+  ],
+  "todos": []
+}
