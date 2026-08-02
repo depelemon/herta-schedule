@@ -49,6 +49,7 @@ interface State extends AppData {
   unlinkFile: () => Promise<void>
   exportData: () => void
   importData: () => Promise<void>
+  loadData: (data: AppData) => void
   initFromFile: () => Promise<void>
 }
 
@@ -159,6 +160,11 @@ export const useStore = create<State>((set, get) => {
         persist(data)
         set({ ...data })
       }
+    },
+
+    loadData: (data) => {
+      persist(data)
+      set({ ...data })
     },
 
     initFromFile: async () => {

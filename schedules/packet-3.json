@@ -2,10 +2,10 @@
   "version": 1,
   "courses": [
     { "id": "p3c1basd", "name": "Basdat A", "color": "#a982db" },
-    { "id": "p3c2pbp", "name": "PBP B (or E, F)", "color": "#c3a6e8" },
-    { "id": "p3c3os", "name": "OS B (or C)", "color": "#9080e0" },
-    { "id": "p3c4sp", "name": "StatProb A", "color": "#8db6f0" },
-    { "id": "p3c5sda", "name": "SDA A (or D, F)", "color": "#4dd4be" }
+    { "id": "p3c2pbp", "name": "PBP B/E/F", "color": "#e5534b" },
+    { "id": "p3c3os", "name": "OS B/C", "color": "#4a90e2" },
+    { "id": "p3c4sp", "name": "StatProb A", "color": "#f2c94c" },
+    { "id": "p3c5sda", "name": "SDA A/D/F", "color": "#6fcf73" }
   ],
   "blocks": [
     { "id": "p3b1a", "courseId": "p3c1basd", "day": 1, "start": "13:00", "end": "14:40", "location": "A2.08 (Ged Baru)" },

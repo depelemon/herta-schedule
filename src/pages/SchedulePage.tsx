@@ -1,11 +1,31 @@
 import { useCallback, useMemo, useRef, useState } from 'react'
-import { Pencil, Lock, Plus, MapPin, Trash2, Wand2 } from 'lucide-react'
+import { Pencil, Lock, Plus, MapPin, Trash2, Wand2, FolderOpen } from 'lucide-react'
 import { useStore } from '../store/useStore'
 import { generateSchedule } from '../lib/scheduleGen'
-import { type DayOfWeek, type ScheduleBlock, OTHER_COURSE_ID } from '../types'
+import { type DayOfWeek, type ScheduleBlock, type AppData, OTHER_COURSE_ID } from '../types'
 import { DAY_LABELS, toMinutes, fromMinutes } from '../lib/time'
 import Modal from '../components/Modal'
 import CourseSelect from '../components/CourseSelect'
+
+// ── Schedule packets (preset course/block sets checked into /schedules) ────────
+const packetModules = import.meta.glob('../../schedules/*.json', { eager: true }) as Record<
+  string,
+  { default: AppData }
+>
+
+interface Packet {
+  id: string
+  label: string
+  data: AppData
+}
+
+const PACKETS: Packet[] = Object.entries(packetModules)
+  .map(([path, mod]) => {
+    const id = path.split('/').pop()!.replace(/\.json$/, '')
+    const label = id.replace(/[-_]/g, ' ').replace(/\b\w/g, (c) => c.toUpperCase())
+    return { id, label, data: mod.default }
+  })
+  .sort((a, b) => a.id.localeCompare(b.id, undefined, { numeric: true }))
 
 // ── Grid constants ─────────────────────────────────────────────────────────────
 const START_HOUR = 8
@@ -61,11 +81,12 @@ const OTHER_COLOR = '#6b7280'
 
 // ── Main component ─────────────────────────────────────────────────────────────
 export default function SchedulePage() {
-  const { courses, blocks, addBlock, addBlockOnDays, updateBlock, deleteBlock, setBlocks } = useStore()
+  const { courses, blocks, addBlock, addBlockOnDays, updateBlock, deleteBlock, setBlocks, loadData } = useStore()
   const [editMode, setEditMode] = useState(false)
   const [drag, setDrag] = useState<DragState | null>(null)
   const [modal, setModal] = useState<ModalState>(null)
   const [showGenConfirm, setShowGenConfirm] = useState(false)
+  const [pendingPacket, setPendingPacket] = useState<Packet | null>(null)
   const daysRef = useRef<HTMLDivElement>(null)
 
   const hours = useMemo(
@@ -272,6 +293,33 @@ export default function SchedulePage() {
           <p className="text-sm text-lavender-300/60">Your weekly recurring timetable.</p>
         </div>
         <div className="flex items-center gap-2">
+          {PACKETS.length > 0 && (
+            <div className="relative">
+              <FolderOpen
+                size={14}
+                className="pointer-events-none absolute left-3 top-1/2 -translate-y-1/2 text-lavender-300/50"
+              />
+              <select
+                className="input w-auto cursor-pointer appearance-none py-2 pl-8 pr-3 text-sm"
+                value=""
+                title="Load a saved schedule packet"
+                onChange={(e) => {
+                  const packet = PACKETS.find((p) => p.id === e.target.value)
+                  if (packet) setPendingPacket(packet)
+                  e.target.value = ''
+                }}
+              >
+                <option value="" disabled>
+                  Load packet…
+                </option>
+                {PACKETS.map((p) => (
+                  <option key={p.id} value={p.id}>
+                    {p.label}
+                  </option>
+                ))}
+              </select>
+            </div>
+          )}
           <button
             className="btn-ghost"
             onClick={() => setShowGenConfirm(true)}
@@ -508,6 +556,41 @@ export default function SchedulePage() {
           {courses.length === 0 && (
             <p className="text-sm text-rose-300/80">Add at least one course first.</p>
           )}
+        </Modal>
+      )}
+
+      {pendingPacket && (
+        <Modal
+          open
+          title={`Load "${pendingPacket.label}"`}
+          onClose={() => setPendingPacket(null)}
+          footer={
+            <>
+              <button className="btn-ghost" onClick={() => setPendingPacket(null)}>
+                Cancel
+              </button>
+              <button
+                className="btn-primary"
+                onClick={() => {
+                  loadData(pendingPacket.data)
+                  setPendingPacket(null)
+                }}
+              >
+                <FolderOpen size={15} /> Load
+              </button>
+            </>
+          }
+        >
+          <p className="text-sm text-lavender-300/70">
+            This will replace your current{' '}
+            <span className="text-lavender-100 font-medium">{courses.length} course{courses.length !== 1 ? 's' : ''}</span>{' '}
+            and{' '}
+            <span className="text-lavender-100 font-medium">{blocks.length} block{blocks.length !== 1 ? 's' : ''}</span>{' '}
+            with the ones from{' '}
+            <span className="text-lavender-100 font-medium">{pendingPacket.label}</span>
+            {' '}({pendingPacket.data.courses.length} course{pendingPacket.data.courses.length !== 1 ? 's' : ''},{' '}
+            {pendingPacket.data.blocks.length} block{pendingPacket.data.blocks.length !== 1 ? 's' : ''}).
+          </p>
         </Modal>
       )}
     </div>
