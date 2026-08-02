@@ -2,10 +2,10 @@
   "version": 1,
   "courses": [
     { "id": "p2c1basd", "name": "Basdat A", "color": "#a982db" },
-    { "id": "p2c2pbp", "name": "PBP B", "code": "or E, F", "color": "#c3a6e8" },
+    { "id": "p2c2pbp", "name": "PBP B (or E, F)", "color": "#c3a6e8" },
     { "id": "p2c3os", "name": "OS A", "color": "#9080e0" },
     { "id": "p2c4sp", "name": "StatProb A", "color": "#8db6f0" },
-    { "id": "p2c5sda", "name": "SDA A", "code": "or D, F", "color": "#4dd4be" }
+    { "id": "p2c5sda", "name": "SDA A (or D, F)", "color": "#4dd4be" }
   ],
   "blocks": [
     { "id": "p2b1a", "courseId": "p2c1basd", "day": 1, "start": "13:00", "end": "14:40", "location": "A2.08 (Ged Baru)" },
