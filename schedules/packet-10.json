@@ -1,0 +1,30 @@
+{
+  "version": 1,
+  "courses": [
+    { "id": "p10c1anum", "name": "Anum C", "color": "#a982db" },
+    { "id": "p10c2pbp", "name": "PBP A/E/F", "color": "#e5534b" },
+    { "id": "p10c3os", "name": "OS A", "color": "#4a90e2" },
+    { "id": "p10c4sp", "name": "StatProb A", "color": "#f2c94c" },
+    { "id": "p10c5sda", "name": "SDA B/C/E", "color": "#6fcf73" }
+  ],
+  "blocks": [
+    { "id": "p10b1a", "courseId": "p10c1anum", "day": 1, "start": "10:00", "end": "11:40", "location": "A2.09 (Ged Baru)" },
+    { "id": "p10b1b", "courseId": "p10c1anum", "day": 3, "start": "10:00", "end": "10:50", "location": "A2.09 (Ged Baru)" },
+    { "id": "p10b1c", "courseId": "p10c1anum", "day": 4, "start": "08:00", "end": "08:50", "location": "A2.09 (Ged Baru)" },
+
+    { "id": "p10b2a", "courseId": "p10c2pbp", "day": 0, "start": "15:00", "end": "16:40", "location": "A6.02 (Ged Baru)" },
+    { "id": "p10b2b", "courseId": "p10c2pbp", "day": 2, "start": "16:00", "end": "17:40", "location": "Lab A1.03 (Ged Baru)" },
+
+    { "id": "p10b3a", "courseId": "p10c3os", "day": 0, "start": "08:00", "end": "09:40", "location": "A6.10 (Ged Baru)" },
+    { "id": "p10b3b", "courseId": "p10c3os", "day": 2, "start": "08:00", "end": "09:40", "location": "A6.10 (Ged Baru)" },
+
+    { "id": "p10b4a", "courseId": "p10c4sp", "day": 0, "start": "13:00", "end": "14:40", "location": "A6.12 (Ged Baru)" },
+    { "id": "p10b4b", "courseId": "p10c4sp", "day": 2, "start": "14:00", "end": "14:50", "location": "A6.12 (Ged Baru)" },
+    { "id": "p10b4c", "courseId": "p10c4sp", "day": 3, "start": "16:00", "end": "17:40", "location": "A6.02 (Ged Baru)" },
+
+    { "id": "p10b5a", "courseId": "p10c5sda", "day": 1, "start": "13:00", "end": "14:40", "location": "A6.07 (Ged Baru)" },
+    { "id": "p10b5b", "courseId": "p10c5sda", "day": 3, "start": "08:00", "end": "09:40", "location": "A6.07 (Ged Baru)" },
+    { "id": "p10b5c", "courseId": "p10c5sda", "day": 4, "start": "14:00", "end": "16:10", "location": "Lab A1.03 (Ged Baru)" }
+  ],
+  "todos": []
+}

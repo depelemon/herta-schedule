@@ -1,7 +1,7 @@
 {
   "version": 1,
   "courses": [
-    { "id": "p1c1basd", "name": "Basdat A", "color": "#a982db" },
+    { "id": "p1c1basd", "name": "Basdat A/B", "color": "#a982db" },
     { "id": "p1c2pbp", "name": "PBP B/C/D", "color": "#e5534b" },
     { "id": "p1c3os", "name": "OS A", "color": "#4a90e2" },
     { "id": "p1c4sp", "name": "StatProb B", "color": "#f2c94c" },
