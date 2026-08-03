@@ -1,0 +1,30 @@
+{
+  "version": 1,
+  "courses": [
+    { "id": "p7c1anum", "name": "Anum A/B", "color": "#a982db" },
+    { "id": "p7c2pbp", "name": "PBP B/C/D", "color": "#e5534b" },
+    { "id": "p7c3os", "name": "OS B/C", "color": "#4a90e2" },
+    { "id": "p7c4sp", "name": "StatProb C", "color": "#f2c94c" },
+    { "id": "p7c5sda", "name": "SDA A/D/F", "color": "#6fcf73" }
+  ],
+  "blocks": [
+    { "id": "p7b1a", "courseId": "p7c1anum", "day": 1, "start": "08:00", "end": "09:40", "location": "A2.07 (Ged baru)" },
+    { "id": "p7b1b", "courseId": "p7c1anum", "day": 3, "start": "09:00", "end": "09:50", "location": "A2.07 (Ged baru)" },
+    { "id": "p7b1c", "courseId": "p7c1anum", "day": 4, "start": "08:00", "end": "08:50", "location": "A2.07 (Ged baru)" },
+
+    { "id": "p7b2a", "courseId": "p7c2pbp", "day": 0, "start": "13:00", "end": "14:40", "location": "A6.02 (Ged Baru)" },
+    { "id": "p7b2b", "courseId": "p7c2pbp", "day": 2, "start": "14:00", "end": "15:40", "location": "Lab A1.01+Lab A1.02 - Gabungan (Gd Baru)" },
+
+    { "id": "p7b3a", "courseId": "p7c3os", "day": 0, "start": "10:00", "end": "11:40", "location": "A1.09 (Ged Baru)" },
+    { "id": "p7b3b", "courseId": "p7c3os", "day": 2, "start": "10:00", "end": "11:40", "location": "A1.09 (Ged Baru)" },
+
+    { "id": "p7b4a", "courseId": "p7c4sp", "day": 0, "start": "08:00", "end": "09:40", "location": "A1.51 (Ged Baru)" },
+    { "id": "p7b4b", "courseId": "p7c4sp", "day": 2, "start": "09:00", "end": "09:50", "location": "A1.51 (Ged Baru)" },
+    { "id": "p7b4c", "courseId": "p7c4sp", "day": 3, "start": "16:00", "end": "17:40", "location": "A6.08 (Ged Baru)" },
+
+    { "id": "p7b5a", "courseId": "p7c5sda", "day": 1, "start": "15:00", "end": "16:40", "location": "A6.11 (Ged Baru)" },
+    { "id": "p7b5b", "courseId": "p7c5sda", "day": 3, "start": "10:00", "end": "11:40", "location": "A6.11 (Ged Baru)" },
+    { "id": "p7b5c", "courseId": "p7c5sda", "day": 4, "start": "14:00", "end": "16:10", "location": "Lab A1.01+Lab A1.02 - Gabungan (Gd Baru)" }
+  ],
+  "todos": []
+}

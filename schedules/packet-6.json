@@ -1,0 +1,30 @@
+{
+  "version": 1,
+  "courses": [
+    { "id": "p6c1anum", "name": "Anum C", "color": "#a982db" },
+    { "id": "p6c2pbp", "name": "PBP B/C/D", "color": "#e5534b" },
+    { "id": "p6c3os", "name": "OS A", "color": "#4a90e2" },
+    { "id": "p6c4sp", "name": "StatProb B", "color": "#f2c94c" },
+    { "id": "p6c5sda", "name": "SDA B/C/E", "color": "#6fcf73" }
+  ],
+  "blocks": [
+    { "id": "p6b1a", "courseId": "p6c1anum", "day": 1, "start": "10:00", "end": "11:40", "location": "A2.09 (Ged Baru)" },
+    { "id": "p6b1b", "courseId": "p6c1anum", "day": 3, "start": "10:00", "end": "10:50", "location": "A2.09 (Ged Baru)" },
+    { "id": "p6b1c", "courseId": "p6c1anum", "day": 4, "start": "08:00", "end": "08:50", "location": "A2.09 (Ged Baru)" },
+
+    { "id": "p6b2a", "courseId": "p6c2pbp", "day": 0, "start": "13:00", "end": "14:40", "location": "A6.02 (Ged Baru)" },
+    { "id": "p6b2b", "courseId": "p6c2pbp", "day": 2, "start": "14:00", "end": "15:40", "location": "Lab A1.01+Lab A1.02 - Gabungan (Gd Baru)" },
+
+    { "id": "p6b3a", "courseId": "p6c3os", "day": 0, "start": "08:00", "end": "09:40", "location": "A6.10 (Ged Baru)" },
+    { "id": "p6b3b", "courseId": "p6c3os", "day": 2, "start": "08:00", "end": "09:40", "location": "A6.10 (Ged Baru)" },
+
+    { "id": "p6b4a", "courseId": "p6c4sp", "day": 0, "start": "10:00", "end": "11:40", "location": "A6.12 (Ged Baru)" },
+    { "id": "p6b4b", "courseId": "p6c4sp", "day": 2, "start": "10:00", "end": "10:50", "location": "A6.12 (Ged Baru)" },
+    { "id": "p6b4c", "courseId": "p6c4sp", "day": 3, "start": "16:00", "end": "17:40", "location": "A6.07 (Ged Baru)" },
+
+    { "id": "p6b5a", "courseId": "p6c5sda", "day": 1, "start": "13:00", "end": "14:40", "location": "A6.07 (Ged Baru)" },
+    { "id": "p6b5b", "courseId": "p6c5sda", "day": 3, "start": "08:00", "end": "09:40", "location": "A6.07 (Ged Baru)" },
+    { "id": "p6b5c", "courseId": "p6c5sda", "day": 4, "start": "14:00", "end": "16:10", "location": "Lab A1.03 (Ged Baru)" }
+  ],
+  "todos": []
+}
