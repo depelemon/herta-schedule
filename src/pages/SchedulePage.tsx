@@ -35,6 +35,10 @@ const SNAP_MIN = 15
 
 const GRID_H = (END_HOUR - START_HOUR) * PX_PER_HOUR
 
+// Mandatory lunch break — every schedule must keep this slot empty
+const LUNCH_START_MIN = 12 * 60
+const LUNCH_END_MIN = 13 * 60
+
 function snap(min: number) {
   return Math.round(min / SNAP_MIN) * SNAP_MIN
 }
@@ -368,6 +372,11 @@ export default function SchedulePage() {
           <div className="flex">
             {/* Time gutter */}
             <div className="relative w-14 shrink-0" style={{ height: GRID_H }}>
+              {/* Lunch break band */}
+              <div
+                className="absolute inset-x-0 bg-lilac-200/10"
+                style={{ top: toTop(LUNCH_START_MIN), height: toHeight(LUNCH_START_MIN, LUNCH_END_MIN) }}
+              />
               {hours.map((h, i) => (
                 <div
                   key={h}
@@ -394,6 +403,16 @@ export default function SchedulePage() {
                   style={{ top: i * PX_PER_HOUR, borderColor: 'rgba(255,255,255,0.13)' }}
                 />
               ))}
+
+              {/* Mandatory lunch break band — must stay empty on every schedule */}
+              <div
+                className="pointer-events-none absolute inset-x-0 z-10 flex items-center justify-center border-y border-white/20 bg-lilac-200/10"
+                style={{ top: toTop(LUNCH_START_MIN), height: toHeight(LUNCH_START_MIN, LUNCH_END_MIN) }}
+              >
+                <span className="text-[10px] font-medium uppercase tracking-wider text-lavender-100/60">
+                  Lunch break
+                </span>
+              </div>
 
               {/* Day columns */}
               {DAY_LABELS.map((_, dayIdx) => {
