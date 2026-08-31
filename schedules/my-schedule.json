@@ -1,0 +1,30 @@
+{
+  "version": 1,
+  "courses": [
+    { "id": "anum", "name": "Analisis Numerik", "code": "CSCM603117", "color": "#a982db" },
+    { "id": "pbp", "name": "Pemrograman Berbasis Platform", "code": "CSGE602022", "color": "#c3a6e8" },
+    { "id": "os", "name": "Sistem Operasi", "code": "CSCM602055", "color": "#9080e0" },
+    { "id": "statprob", "name": "Statistika dan Probabilitas", "code": "CSCM602013", "color": "#8db6f0" },
+    { "id": "sda", "name": "Struktur Data & Algoritma", "code": "CSGE602040", "color": "#4dd4be" }
+  ],
+  "blocks": [
+    { "id": "b1", "courseId": "anum", "day": 1, "start": "08:00", "end": "09:40", "location": "A2.06 (Ged Baru) --- Lab Laptop" },
+    { "id": "b2", "courseId": "anum", "day": 3, "start": "09:00", "end": "09:50", "location": "A2.06 (Ged Baru) --- Lab Laptop" },
+    { "id": "b3", "courseId": "anum", "day": 4, "start": "08:00", "end": "08:50", "location": "A2.08 (Ged Baru)" },
+
+    { "id": "b4", "courseId": "pbp", "day": 0, "start": "13:00", "end": "14:40", "location": "A6.02 (Ged Baru)" },
+    { "id": "b5", "courseId": "pbp", "day": 2, "start": "14:00", "end": "15:40", "location": "Lab A1.01+Lab A1.02 - Gabungan (Gd Baru)" },
+
+    { "id": "b6", "courseId": "os", "day": 0, "start": "10:00", "end": "11:40", "location": "A1.09 (Ged Baru)" },
+    { "id": "b7", "courseId": "os", "day": 2, "start": "10:00", "end": "11:40", "location": "A1.09 (Ged Baru)" },
+
+    { "id": "b8", "courseId": "statprob", "day": 0, "start": "08:00", "end": "09:40", "location": "A1.51 (Ged Baru)" },
+    { "id": "b9", "courseId": "statprob", "day": 2, "start": "09:00", "end": "09:50", "location": "A1.51 (Ged Baru)" },
+    { "id": "b10", "courseId": "statprob", "day": 3, "start": "16:00", "end": "17:40", "location": "A6.08 (Ged Baru)" },
+
+    { "id": "b11", "courseId": "sda", "day": 1, "start": "15:00", "end": "16:40", "location": "A6.07 (Ged Baru)" },
+    { "id": "b12", "courseId": "sda", "day": 3, "start": "10:00", "end": "11:40", "location": "A6.07 (Ged Baru)" },
+    { "id": "b13", "courseId": "sda", "day": 4, "start": "14:00", "end": "15:40", "location": "Lab.1107/1109 --- PC 34 (Gd Lama)" }
+  ],
+  "todos": []
+}
