@@ -1,0 +1,166 @@
+{
+  "version": 1,
+  "courses": [
+    {
+      "id": "pbp",
+      "name": "PBP B",
+      "color": "#e5534b"
+    },
+    {
+      "id": "os",
+      "name": "OS B",
+      "color": "#4a90e2"
+    },
+    {
+      "id": "statprob",
+      "name": "StatProb C",
+      "color": "#f2c94c"
+    },
+    {
+      "id": "sda",
+      "name": "SDA D",
+      "color": "#6fcf73"
+    },
+    {
+      "id": "anum",
+      "name": "Anum B",
+      "color": "#f2994a"
+    },
+    {
+      "id": "basdat",
+      "name": "Basdat B",
+      "color": "#ffffff"
+    }
+  ],
+  "blocks": [
+    {
+      "id": "b4",
+      "courseId": "pbp",
+      "day": 0,
+      "start": "13:00",
+      "end": "14:40",
+      "location": "A6.02 (Ged Baru)"
+    },
+    {
+      "id": "b5",
+      "courseId": "pbp",
+      "day": 2,
+      "start": "14:00",
+      "end": "15:40",
+      "location": "Lab A1.01+Lab A1.02 - Gabungan (Gd Baru)"
+    },
+    {
+      "id": "b6",
+      "courseId": "os",
+      "day": 0,
+      "start": "10:00",
+      "end": "11:40",
+      "location": "A1.09 (Ged Baru)"
+    },
+    {
+      "id": "b7",
+      "courseId": "os",
+      "day": 2,
+      "start": "10:00",
+      "end": "11:40",
+      "location": "A1.09 (Ged Baru)"
+    },
+    {
+      "id": "b8",
+      "courseId": "statprob",
+      "day": 0,
+      "start": "08:00",
+      "end": "09:40",
+      "location": "A1.51 (Ged Baru)"
+    },
+    {
+      "id": "b9",
+      "courseId": "statprob",
+      "day": 2,
+      "start": "09:00",
+      "end": "09:50",
+      "location": "A1.51 (Ged Baru)"
+    },
+    {
+      "id": "b10",
+      "courseId": "statprob",
+      "day": 3,
+      "start": "16:00",
+      "end": "17:40",
+      "location": "A6.08 (Ged Baru)"
+    },
+    {
+      "id": "b11",
+      "courseId": "sda",
+      "day": 1,
+      "start": "15:00",
+      "end": "16:40",
+      "location": "A6.07 (Ged Baru)"
+    },
+    {
+      "id": "b12",
+      "courseId": "sda",
+      "day": 3,
+      "start": "10:00",
+      "end": "11:40",
+      "location": "A6.07 (Ged Baru)"
+    },
+    {
+      "id": "b13",
+      "courseId": "sda",
+      "day": 4,
+      "start": "14:00",
+      "end": "15:40",
+      "location": "Lab.1107/1109 --- PC 34 (Gd Lama)"
+    },
+    {
+      "id": "b1",
+      "courseId": "anum",
+      "day": 1,
+      "start": "08:00",
+      "end": "09:40",
+      "location": "A2.06 (Ged Baru) --- Lab Laptop"
+    },
+    {
+      "id": "b2",
+      "courseId": "anum",
+      "day": 3,
+      "start": "09:00",
+      "end": "09:50",
+      "location": "A2.06 (Ged Baru) --- Lab Laptop"
+    },
+    {
+      "id": "b3",
+      "courseId": "anum",
+      "day": 4,
+      "start": "08:00",
+      "end": "08:50",
+      "location": "A2.08 (Ged Baru)"
+    },
+    {
+      "id": "b14",
+      "courseId": "basdat",
+      "day": 1,
+      "start": "13:00",
+      "end": "13:50",
+      "location": "Lab A1.03 (Ged Baru)"
+    },
+    {
+      "id": "b15",
+      "courseId": "basdat",
+      "day": 2,
+      "start": "16:00",
+      "end": "17:40",
+      "location": "A2.08 (Ged Baru)"
+    },
+    {
+      "id": "b16",
+      "courseId": "basdat",
+      "day": 4,
+      "start": "10:00",
+      "end": "11:40",
+      "location": "(A2.08 (Ged Baru)"
+    }
+  ],
+  "todos": []
+}
